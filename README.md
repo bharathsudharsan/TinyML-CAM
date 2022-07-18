@@ -1,4 +1,5 @@
 # TinyML-CAM
 
-https://user-images.githubusercontent.com/16524846/179447412-d17b724c-d38b-4a8a-a94e-bd491a292c07.mp4
+
+https://user-images.githubusercontent.com/16524846/179447640-d7f5efa9-3a44-431c-922d-348ee526c782.mp4
 
