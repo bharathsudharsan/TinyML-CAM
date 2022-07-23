@@ -1,53 +1,31 @@
 #include "eloquent.h"
-#include "eloquent/print.h"
-#include "eloquent/tinyml/voting/quorum.h"
+#include "eloquent/networking/wifi.h"
+#include "eloquent/vision/camera/esp32/webserver.h"
 
 // replace 'm5wide' with your own model
 // possible values are 'aithinker', 'eye', 'm5stack', 'm5wide', 'wrover'
 #include "eloquent/vision/camera/m5wide.h"
 
-#include "HogPipeline.h"
-#include "HogClassifier.h"
-
-Eloquent::TinyML::Voting::Quorum<7> quorum;
-
 
 void setup() {
-  Serial.begin(115200);
-  delay(3000);
-  Serial.println("Begin");
+    Serial.begin(115200);
 
-  camera.qqvga();
-  camera.grayscale();
+    // configure camera
+    camera.jpeg();
+    camera.qqvga();
 
-  while (!camera.begin())
-    Serial.println("Cannot init camera");
+    // replace with your WiFi credentials
+    while (!wifi.connectTo("Abc", "12345678"))
+        Serial.println("Cannot connect to WiFi");
+
+    while (!camera.begin())
+        Serial.println("Cannot connect to camera");
+
+    webServer.start();
+    Serial.print("Camera web server started at http://");
+    Serial.println(WiFi.localIP());
 }
 
 void loop() {
-  if (!camera.capture()) {
-      Serial.println(camera.getErrorMessage());
-      delay(1000);
-      return;
-  }
-  
-  // apply HOG pipeline to camera frame
-  hog.transform(camera.buffer);
-
-  // get a stable prediction
-  // this is optional, but will improve the stability of predictions
-  uint8_t prediction = classifier.predict(hog.features);
-  int8_t stablePrediction = quorum.vote(prediction);
-
-  if (quorum.isStable()) {
-    eloquent::print::printf(
-      Serial, 
-      "Stable prediction: %s \t(DSP: %d ms, Classifier: %d us)\n", 
-      classifier.getLabelOf(stablePrediction),
-      hog.latencyInMillis(),
-      classifier.latencyInMicros()
-    );
-  }
-
-  camera.free();
+    // do nothing
 }
