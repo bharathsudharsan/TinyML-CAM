@@ -5,6 +5,8 @@ ESP32 classifying Raspberry Pi Pico, Portenta H7, Wio Terminal from image frames
 
 https://user-images.githubusercontent.com/16524846/179447640-d7f5efa9-3a44-431c-922d-348ee526c782.mp4
 
+### Results
+
 Following can be observed from the video:
 
  - **Time.** For image frames, the digital signal processing (DSP) based features extraction time is ≈ 12 ms, while classification time is ≈ < 20 𝜇𝑠 (1/1000<sup>th</sup> of DSP).
