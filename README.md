@@ -1,4 +1,4 @@
-# TinyML-CAM - Image Recognition System that Runs at 80 FPS in 1 Kb of RAM
+## TinyML-CAM - Image Recognition System that Runs at 80 FPS in 1 Kb of RAM
 
 ### Image Recognition Demo - ESP32
 ESP32 classifying Raspberry Pi Pico, Portenta H7, Wio Terminal from image frames
@@ -17,6 +17,6 @@ Following can be observed from the video:
 
 ### Code
 
-- [ipynb]-TinyML-CAM-full-code-with-markdown.ipynb
-- [h]-HOG-plus-RandomForest-classifier.h
-- [ino]-arduino-ESP32-code.ino - upload to
+- [[ipynb]-TinyML-CAM-full-code-with-markdown.ipynb](https://github.com/bharathsudharsan/TinyML-CAM/blob/main/%5Bipynb%5D-TinyML-CAM-full-code-with-markdown.ipynb)
+- [[h]-HOG-plus-RandomForest-classifier.h](https://github.com/bharathsudharsan/TinyML-CAM/blob/main/%5Bh%5D-HOG-plus-RandomForest-classifier.h)
+- [[ino]-arduino-ESP32-code.ino](https://github.com/bharathsudharsan/TinyML-CAM/blob/main/%5Bino%5D-arduino-ESP32-code.ino) - upload to
