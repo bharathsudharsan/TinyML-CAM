@@ -16,8 +16,8 @@ Following can be observed from the video:
  - **Memory** Consumes only 1 kB of RAM - difference between the RAM calculated by Arduino IDE before and after adding the TinyML-CAM image recognition system.
 
 ### Code
-- [[ino]-CameraWebServer.ino]()
-- [[ipynb]-TinyML-CAM-full-code-with-markdown.ipynb](https://github.com/bharathsudharsan/TinyML-CAM/blob/main/%5Bipynb%5D-TinyML-CAM-full-code-with-markdown.ipynb) -
+- [[ino]-CameraWebServer.ino](https://github.com/bharathsudharsan/TinyML-CAM/blob/main/%5Bino%5D-CameraWebServer.ino) - For image dataset collection. After upload to ESP32, it will connect to WiFi network and start an HTTP video streaming server that can be accessed from any web broswer.
 - [[h]-HogClassifier.h](https://github.com/bharathsudharsan/TinyML-CAM/blob/main/%5Bh%5D-HogClassifier.h) - Contains the RandomForestClassifier trained using the collected image data.
 - [[h]-HogPipeline.h](https://github.com/bharathsudharsan/TinyML-CAM/blob/main/%5Bh%5D-HogPipeline.h) - Contains the HOG features extrator for image frames.
 - [[ino]-arduino-ESP32-code.ino](https://github.com/bharathsudharsan/TinyML-CAM/blob/main/%5Bino%5D-arduino-ESP32-code.ino) - Upload to ESP32 along with the above two .h files. After upload, put your objects in front of the camera to see predicted labels.
+- [[ipynb]-TinyML-CAM-full-code-with-markdown.ipynb](https://github.com/bharathsudharsan/TinyML-CAM/blob/main/%5Bipynb%5D-TinyML-CAM-full-code-with-markdown.ipynb) - Contains all the required code required for this project, along with sample outputs in each step.
