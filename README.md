@@ -23,9 +23,9 @@ Following can be observed from the video:
 - To collect images on a PC and train an ML classifier, install EverywhereML Python package.
 - To test the TinyML-CAM pipeline, users only require an ESP32 of any variant:
   - [AI Thinker](https://randomnerdtutorials.com/program-upload-code-esp32-cam/) (the most widely used)
-  - [Espressif](https://www.espressif.com/en/products/devkits/esp-eye/overview)
   - [M5Stack](https://shop.m5stack.com/products/esp32-camera?variant=16804741316698) (recommend as it comes with 4 Mb external PSRAM)
-
+  - [Espressif](https://www.espressif.com/en/products/devkits/esp-eye/overview)
+ 
 ### Code
 - [[ino]-CameraWebServer.ino](https://github.com/bharathsudharsan/TinyML-CAM/blob/main/%5Bino%5D-CameraWebServer.ino) - For image dataset collection. After upload to ESP32, it will connect to WiFi network and start an HTTP video streaming server that can be accessed from any web broswer.
 - [[h]-HogClassifier.h](https://github.com/bharathsudharsan/TinyML-CAM/blob/main/%5Bh%5D-HogClassifier.h) - Contains the RandomForestClassifier trained using the collected image data.
