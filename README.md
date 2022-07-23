@@ -15,9 +15,24 @@ Following can be observed from the video:
 
  - **Memory.** Consumes only 1 kB of RAM - difference between the RAM calculated by Arduino IDE before and after adding the TinyML-CAM image recognition system.
 
+### Requirements
+
+- To capture images from the ESP32 with ease, install Eloquent library via Arduino IDE library manager. 
+- To collect images on a PC and train an ML classifier, install EverywhereML Python package.
+- To test the TinyML-CAM pipeline, users only require an ESP32 of any variant:
+  - [AI Thinker](https://randomnerdtutorials.com/program-upload-code-esp32-cam/) (the most widely used)
+  - [Espressif](https://www.espressif.com/en/products/devkits/esp-eye/overview)
+  - [M5Stack](https://shop.m5stack.com/products/esp32-camera?variant=16804741316698) (recommend as it comes with 4 Mb external PSRAM)
+
 ### Code
 - [[ino]-CameraWebServer.ino](https://github.com/bharathsudharsan/TinyML-CAM/blob/main/%5Bino%5D-CameraWebServer.ino) - For image dataset collection. After upload to ESP32, it will connect to WiFi network and start an HTTP video streaming server that can be accessed from any web broswer.
 - [[h]-HogClassifier.h](https://github.com/bharathsudharsan/TinyML-CAM/blob/main/%5Bh%5D-HogClassifier.h) - Contains the RandomForestClassifier trained using the collected image data.
 - [[h]-HogPipeline.h](https://github.com/bharathsudharsan/TinyML-CAM/blob/main/%5Bh%5D-HogPipeline.h) - Contains the HOG features extrator for image frames.
 - [[ino]-arduino-ESP32-code.ino](https://github.com/bharathsudharsan/TinyML-CAM/blob/main/%5Bino%5D-arduino-ESP32-code.ino) - Upload to ESP32 along with the above two .h files. After upload, put your objects in front of the camera to see predicted labels.
 - [[ipynb]-TinyML-CAM-full-code-with-markdown.ipynb](https://github.com/bharathsudharsan/TinyML-CAM/blob/main/%5Bipynb%5D-TinyML-CAM-full-code-with-markdown.ipynb) - Contains all the required code required for this project, along with sample outputs in each step.
+
+### Future Work
+
+To lower the DSP time (currently 12 ms) by implementing mathematical approximation methods, which will boost the frame rate - i.e., if reduced to 6 ms, then 1000/6 ms = 166.6 FPS. 
+
+Similar to the [TinyML benchmark](https://github.com/bharathsudharsan/TinyML-Benchmark-NNs-on-MCUs), we plan to test the pipeline on a range of datasets, ML algorithms, and IoT boards.
