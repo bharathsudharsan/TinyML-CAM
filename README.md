@@ -11,7 +11,7 @@ Following can be observed from the video:
 
  - **Time.** For image frames, the digital signal processing (DSP) based features extraction time is ≈ 12 ms, while classification time is ≈ < 20 𝜇𝑠 (1/1000<sup>th</sup> of DSP).
 
- - **FPS.** It is 1000/12 ms = 83.3 FPS, which is the time taken by the TinyML-CAM image recognition system to process (DSP) plus classify using a single image frame. Since the ESP32 has a 30 FPS frame rate, just to capture frames, it takes 1000/30 = 33 ms. So the entire frame rate is 1000/(33+12) = 22 FPS.
+ - **FPS.** It is 1000/12 ms = 83.3 FPS, which is the time taken by the TinyML-CAM system for HOG features extraction (using DSP) plus classification. Since the ESP32 has a 30 FPS frame rate, just to capture frames, it takes 1000/30 = 33 ms. Since the DSP plus classification time is only ≈ 12 ms, the image recognition happens in real-time between two consecutive frames, thus not altering the ESP32 camera's FPS. 
 
  - **Accuracy.** As expected during Pairplot analysis, Portenta and Pi (features overlapped) are mislabelled quite often, which can be rectified by improving dataset quality.
 
