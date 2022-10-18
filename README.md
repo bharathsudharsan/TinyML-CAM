@@ -17,6 +17,10 @@ Following can be observed from the video:
 
  - **Memory.** Consumes only 1 kB of RAM - difference between the RAM calculated by Arduino IDE before and after adding the TinyML-CAM image recognition system.
 
+### Paper 
+
+[https://dl.acm.org/doi/pdf/10.1145/3495243.3558264](https://dl.acm.org/doi/pdf/10.1145/3495243.3558264)
+
 ### Requirements
 
 - To capture images from the ESP32 with ease, install Eloquent library via Arduino IDE library manager. 
